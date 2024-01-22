@@ -1,4 +1,3 @@
-import * as ecc from "tiny-secp256k1";
 import { tick } from "svelte";
 import { get } from "svelte/store";
 import { newapi as api, electrs, hasura, query } from "$lib/api";
@@ -7,13 +6,12 @@ import { mnemonicToSeedSync } from "bip39";
 import { fromBase58, fromSeed } from "bip32";
 import {
   address as Address,
+  ECPair,
   Psbt,
   payments,
   networks,
   Transaction,
 } from "liquidjs-lib";
-import { ECPairFactory } from "ecpair";
-const ECPair = ECPairFactory(ecc);
 
 import reverse from "buffer-reverse";
 import {
