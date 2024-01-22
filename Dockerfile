@@ -1,4 +1,4 @@
-FROM gcr.io/coinos-326717/github.com/tokenocean/maven:base
+FROM asoltys/maven:base
 
 ARG NODE_ENV=production
 ENV NODE_ENV $NODE_ENV
