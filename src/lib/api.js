@@ -53,6 +53,7 @@ export const post = (url, body, fetch) =>
 
 export const getQ = (defaultHeaders) => {
   const fn = async (query, variables, headers) => {
+    console.log("R", import.meta.env.VITE_HASURA, headers, query, variables)
     let r = await wretch()
     .url(import.meta.env.VITE_HASURA)
     .headers(headers)
