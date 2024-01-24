@@ -1,9 +1,9 @@
 <script context="module">
   export const load = ({ session, props, url }) => {
-    if (session.user ) {
+    if (session.user) {
       return {
         status: 302,
-        redirect: url.origin.includes("local") ? `/${session.user.username}` : "/",
+        redirect: url.searchParams.get("redirect") || "/market",
       };
     }
 
